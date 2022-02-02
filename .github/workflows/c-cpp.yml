@@ -16,7 +16,7 @@ jobs:
     - name: Change wrapper permissions
       run: chmod +x ./hello.c
     - name: hello
-      run: ./hello.c
+      run: gcc -o hello hello.c
     - name: make
       run: make
     - name: make check
