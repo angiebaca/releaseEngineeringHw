@@ -13,13 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: install cppunit
-      run: sudo apt install -y libcppunit-dev
-    - name: configure
-      run: ./hello.c
-    - name: make
-      run: make
-    - name: run
+    - name: Change wrapper permissions
+      run: chmod +x ./hello.c
+    - name: hello
+      run: gcc -Wall hello.c -o hello
+    - name: execute
       run: ./hello
     - name: make check
       run: make check
